@@ -71,6 +71,9 @@ class CertificateChain(object):
     def __init__(self):
         self.certs = OrderedDict()
 
+    def __iter__(self):
+        return self.certs.items()
+
     def add_cert(self, cert):
         self.certs[cert.digest] = cert
 
